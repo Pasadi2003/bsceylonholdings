@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinnamon</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('pictures/cinnmonbg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        /* Hamburger Menu (for mobile) */
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive Navigation */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        /* Product Container */
+        .product-container {
+            max-width: 90%;
+            width: 400px;
+            margin-top: 100px; /* To avoid overlap with navbar */
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        .product-container img {
+    max-width: 100%; /* Ensures the image does not overflow */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Removes unwanted extra space below the image */
+    margin: 0 auto; /* Centers the image */
+    max-height: 250px; /* Optional: Adjust the height limit */
+}
+button {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #444; /* Darker shade on hover */
+}
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+        }
+
+        .footer h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border-bottom: 2px solid white;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .textbox-footer {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: aliceblue;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="pictures/logo.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+             <li><a href="index.html">Products</a></li>
+             <li><a href="index.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Product Container -->
+    <div class="product-container">
+        <img src="pictures/p1.jpg" alt="Black Pepper">
+        <h2>Cinnamon</h2>
+        <p>Cinnamon is a highly valued spice known for its 
+            sweet aroma and warm, spicy flavor, commonly used 
+            in cooking and traditional medicine. B&S Holding Pvt Ltd 
+            exports premium-quality cinnamon, carefully harvested 
+            and processed to retain its natural oils and rich taste, 
+            ensuring superior freshness and adherence to international standards.</p>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Address</h3>
+            <p>14/1, Batakolaniya, Malmaduwa, Kegalle, Sri Lanka</p>
+        </div>
+        <div class="footer-column">
+            <h3>Contact Details</h3>
+            <p>
+                <img src="pictures/call.png" alt="Call" style="width: 20px; vertical-align: middle; margin-right: 5px;">+94704114826
+                <br>
+                <img src="pictures/whatsapp.png" alt="WhatsApp" style="width: 20px; vertical-align: middle; margin-right: 5px;">+94712292925
+            </p>
+        </div>
+        <div class="footer-column">
+            <h3>Email Address</h3>
+            <p> bnsholdingspvtltd@outlook.com </p>
+        </div>
+
+        <p class="textbox-footer">
+            © 2025, B&S HOLDINGS PRIVATE LIMITED <br>
+            Designed and developed by Manodya Herath        
+        </p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>
